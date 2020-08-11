@@ -1,6 +1,6 @@
 <script>
-  export let status
-  export let error
+  export let status;
+  export let error;
 </script>
 
 <style>
@@ -17,7 +17,6 @@
       margin: 50px auto;
     }
   }
-  
 </style>
 
 <svelte:head>
@@ -59,7 +58,11 @@
         error, which apparently means "{error.message}".
       </p>
     {/if}
-		<br>
-    <p>Would you like to go <a href=".">home</a>?</p>
+    <br />
+    <p>
+      Would you like to go
+      <a href=".">home</a>
+      ?
+    </p>
   </div>
 </article>
