@@ -2,18 +2,22 @@
   import { stores } from "@sapper/app";
   const { session } = stores();
 
-  session.cart = [];
+  let cartItems = 0;
 
   import Fooditem from "./_components/Fooditem.svelte";
   import foodItems from "./foodItems";
   import Header from "./_components/Header.svelte";
-  let title ="Food Order"
+  let title = "Food Order";
+
+  if (session.cart === undefined) {
+    session.cart = [];
+  }
 </script>
 
-<Header {title} />
+<Header {title} bind:items={cartItems} />
 
 {#each foodItems as item}
   <div>
-    <Fooditem {...item} />
+    <Fooditem bind:items={cartItems} {...item} />
   </div>
 {/each}
