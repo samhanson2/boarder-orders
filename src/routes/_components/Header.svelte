@@ -12,8 +12,12 @@
     background-color: rgba(255, 255, 255, 0.5);
   }
   .title {
-    padding: 10px;
+    padding: 20px;
     text-align: center;
+  }
+  .button {
+    font-size: 25px;
+    font-weight: bold;
   }
 </style>
 

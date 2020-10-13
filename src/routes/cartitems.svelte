@@ -36,6 +36,7 @@
 <style>
   .card {
     margin-top: 20px;
+     margin-bottom: 20px;
   }
   .media-right {
     margin-left: 50px;
@@ -50,19 +51,17 @@
   </tr>
   <tr>
     <td>
-      {#if session.cart}
-        <!-- loop for each item in session.cart
-            prints each item as card
-       -->
+        <!-- loop for each item in session.cart prints each item as card -->
         {#each session.cart as cartItem, index}
           <div class="card">
             <div class="card-content">
               <div class="media">
                 <div class="media-left">
-                  <p class="title">{cartItem}</p>
+                  <p class="title">{cartItem.name}</p>
+                  <p class="subtitle">{cartItem.desc}</p>
                 </div>
                 <div class="media-content">
-                  <p class="title">1</p>
+                  <p class="title">${cartItem.num}</p>
                 </div>
                 <div class="media-right">
                   <button
@@ -77,8 +76,6 @@
             </div>
           </div>
         {/each}
-      {/if}
-      <br />
       <button class="button" on:click={saveDataToLocal}>
         Remember my order
       </button>

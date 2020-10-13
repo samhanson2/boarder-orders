@@ -5,12 +5,12 @@
   export let name = "No name";
   export let desc = "No description";
   export let src = "https://bulma.io/images/placeholders/96x96.png";
-  export let num = "";
+  export let num = "$";
   export let items;
 
   /* addeds food to an array */
   function addFood() {
-    session.cart = [...session.cart, name];
+    session.cart = [...session.cart, { name: name, desc: desc, num: num } ];
     items += 1;
   }
 </script>
@@ -22,8 +22,13 @@
   div {
     background-color: antiquewhite;
   }
-  .subtitle {
+  .button {
     font-size: 25px;
+    font-weight: bold;
+  }
+  .subtitle {
+    font-size: 28px;
+    color: black;
   }
 </style>
 
@@ -38,7 +43,6 @@
       <div class="media-content">
         <p class="title">{name}</p>
         <p class="subtitle">{desc}</p>
-
       </div>
       <div class="media-right">
         <p class="subtitle">${num}</p>
