@@ -5,12 +5,12 @@
   export let name = "No name";
   export let desc = "No description";
   export let src = "https://bulma.io/images/placeholders/96x96.png";
-  export let num = "$";
-  export let items;
+  export let num = 0;
+  export let items = 0;
 
   /* addeds food to an array */
   function addFood() {
-    session.cart = [...session.cart, { name: name, desc: desc, num: num } ];
+    session.cart = [...session.cart, { name: name, desc: desc, num: num }];
     items += 1;
   }
 </script>
@@ -45,6 +45,14 @@
         <p class="subtitle">{desc}</p>
       </div>
       <div class="media-right">
+        <!-- <label for="quantity">Qty: </label>
+<input min="1" type="number" id="quantity" name="quantity" value="1" /><style>
+  #quantity {
+    padding: 5px;
+    width: 35px;
+    border: 1px solid #555;
+  }
+</style> -->
         <p class="subtitle">${num}</p>
         <button class="button" on:click={addFood}>Add to cart</button>
       </div>

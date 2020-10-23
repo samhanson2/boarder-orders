@@ -1,8 +1,13 @@
 <script>
   import { stores } from "@sapper/app";
+  import { goto } from "@sapper/app";
   const { session } = stores();
-
   session.cart = [];
+
+  function nameAndGo(flat) {
+    session.flat = flat;
+    goto("./lookfood");
+  }
 </script>
 
 <style>
@@ -24,7 +29,6 @@
   }
   .button {
     display: block;
-    margin: 20px;
     font-size: 38px;
     -webkit-text-stroke: 0.7px black;
     transition-duration: 0.1s;
@@ -37,48 +41,59 @@
     background-color: white;
     border-radius: 5px;
     margin: 10px;
-    padding: 1px;
+    padding: 20px;
   }
 </style>
 
 <h1 class="title has-text-centered">Order Food</h1>
+<!-- buttons  -->
 <div class="whitebox">
-  <a
-    href="./lookfood"
+  <button
     onclick="body.style.backgroundColor = 'hsl(142, 85%, 38%, 0.5)';"
-    class="button is-large is-success green">
+    on:click={() => {
+      nameAndGo('Green');
+    }}
+    class="button is-fullwidth is-success green">
     Green Flat
-  </a>
+  </button>
 </div>
 <div class="whitebox">
-  <a
-    href="./lookfood"
+  <button
     onclick="body.style.backgroundColor = 'hsla(204, 86%, 53%, 0.5)';"
-    class="button is-large is-info blue">
+    on:click={() => {
+      nameAndGo('Blue');
+    }}
+    class="button is-fullwidth is-info blue">
     Blue Flat
-  </a>
+  </button>
 </div>
 <div class="whitebox">
-  <a
-    href="./lookfood"
-    onclick="body.style.backgroundColor = 'rgba(255, 140, 0, 0.8)';"
-    class="button is-large orange">
+  <button
+    onclick="body.style.backgroundColor = 'rgba(255, 140, 0, 0.7)';"
+    on:click={() => {
+      nameAndGo('Orange');
+    }}
+    class="button is-fullwidth orange">
     Orange Flat
-  </a>
+  </button>
 </div>
 <div class="whitebox">
-  <a
-    href="./lookfood"
+  <button
     onclick="body.style.backgroundColor = 'hsl(48, 100%, 67%, 0.8)';"
-    class="button is-large is-warning yellow">
+    on:click={() => {
+      nameAndGo('Yellow');
+    }}
+    class="button is-fullwidth is-warning yellow">
     Yellow Flat
-  </a>
+  </button>
 </div>
 <div class="whitebox">
-  <a
-    href="./lookfood"
+  <button
     onclick="document.body.style.backgroundColor = 'pink';"
-    class="button is-large pink">
+    on:click={() => {
+      nameAndGo('Pink');
+    }}
+    class="button is-fullwidth pink">
     Pink Flat
-  </a>
+  </button>
 </div>

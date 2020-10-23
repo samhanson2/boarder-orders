@@ -19,24 +19,28 @@
       ...session.cart.slice(index + 1)
     ];
   }
-
   /* Storing items */
   function saveDataToLocal() {
-    let data = JSON.stringify(session.cart);
-    localStorage.setItem("session.cart", data);
+    let order = {
+      cart: session.cart
+    };
+    db.collection("orders")
+      .doc(session.flat)
+      .set(order);
   }
 
   /* Get items from storing */
-  function getDataFromLocal() {
-    let data = localStorage.getItem("session.cart");
-    session.cart = JSON.parse(data);
+  async function getDataFromLocal() {
+    let orderDoc = await db.collection("orders").doc(session.flat).get();
+    let order = orderDoc.data();
+    session.cart = order.cart
   }
 </script>
 
 <style>
   .card {
     margin-top: 20px;
-     margin-bottom: 20px;
+    margin-bottom: 20px;
   }
   .media-right {
     margin-left: 50px;
@@ -51,31 +55,31 @@
   </tr>
   <tr>
     <td>
-        <!-- loop for each item in session.cart prints each item as card -->
-        {#each session.cart as cartItem, index}
-          <div class="card">
-            <div class="card-content">
-              <div class="media">
-                <div class="media-left">
-                  <p class="title">{cartItem.name}</p>
-                  <p class="subtitle">{cartItem.desc}</p>
-                </div>
-                <div class="media-content">
-                  <p class="title">${cartItem.num}</p>
-                </div>
-                <div class="media-right">
-                  <button
-                    class="button"
-                    on:click={() => {
-                      removeItem(index);
-                    }}>
-                    Remove
-                  </button>
-                </div>
+      <!-- loop for each item in session.cart prints each item as card -->
+      {#each session.cart as cartItem, index}
+        <div class="card">
+          <div class="card-content">
+            <div class="media">
+              <div class="media-left">
+                <p class="title">{cartItem.name}</p>
+                <p class="subtitle">{cartItem.desc}</p>
+              </div>
+              <div class="media-content">
+                <p class="title">${cartItem.num}</p>
+              </div>
+              <div class="media-right">
+                <button
+                  class="button"
+                  on:click={() => {
+                    removeItem(index);
+                  }}>
+                  Remove
+                </button>
               </div>
             </div>
           </div>
-        {/each}
+        </div>
+      {/each}
       <button class="button" on:click={saveDataToLocal}>
         Remember my order
       </button>
