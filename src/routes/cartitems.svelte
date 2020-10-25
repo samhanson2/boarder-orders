@@ -5,9 +5,9 @@
   import Header from "./_components/Header.svelte";
   import Fooditem from "./_components/Fooditem.svelte";
   let title = "Cart";
-  let link = "./lookfood";
+  let link = "./stylefood";
 
-  /* crating array if undefined */
+  /* crating array if session.cart is undefined */
   if (session.cart === undefined) {
     session.cart = [];
   }
@@ -31,9 +31,12 @@
 
   /* Get items from storing */
   async function getDataFromLocal() {
-    let orderDoc = await db.collection("orders").doc(session.flat).get();
+    let orderDoc = await db
+      .collection("orders")
+      .doc(session.flat)
+      .get();
     let order = orderDoc.data();
-    session.cart = order.cart
+    session.cart = order.cart;
   }
 </script>
 

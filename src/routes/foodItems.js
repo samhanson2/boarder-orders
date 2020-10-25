@@ -1,8 +1,8 @@
 import { fix_position } from "svelte/internal"
 const foodItems = [
-	{ name: "Mandarin", desc: "5 Mandarin", src: "./Mandarin.jpg",  num: 2 },
-	{ name: "Orange", desc: "5 Oranges", src: "./Orange.jpg", num: 2 },
-	{ name: "Flour", desc: "1 cup", src: "./cupflour.jpg", num: 1 },
+	{ name: "Mandarin", desc: "5 Mandarin", src: "./Mandarin.jpg", alt:"Mandarin", num: 2 },
+	{ name: "Orange", desc: "5 Oranges", src: "./Orange.jpg", alt:"Orange", num: 2 },
+	{ name: "Flour", desc: "1 cup", num: 1 },
 	{ name: "Milo", desc: "Small Container", num: 9 },
 	{ name: "Coffee", desc: "Small Container", num: 9 },
 	{ name: "Tea Bags", desc: "", num: 9 },

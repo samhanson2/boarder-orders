@@ -4,9 +4,10 @@
   const { session } = stores();
   session.cart = [];
 
+  // function for buttons to go to next page
   function nameAndGo(flat) {
     session.flat = flat;
-    goto("./lookfood");
+    goto("./stylefood");
   }
 </script>
 
@@ -46,7 +47,7 @@
 </style>
 
 <h1 class="title has-text-centered">Order Food</h1>
-<!-- buttons  -->
+<!-- coloured flat buttons for each flat  -->
 <div class="whitebox">
   <button
     onclick="body.style.backgroundColor = 'hsl(142, 85%, 38%, 0.5)';"

@@ -7,8 +7,9 @@
   export let src = "https://bulma.io/images/placeholders/96x96.png";
   export let num = 0;
   export let items = 0;
+  export let alt = "placeholder";
 
-  /* addeds food to an array */
+  /* addeds foods to an array */
   function addFood() {
     session.cart = [...session.cart, { name: name, desc: desc, num: num }];
     items += 1;
@@ -37,7 +38,7 @@
     <div class="media">
       <div class="media-left">
         <figure class="image is-96x96">
-          <img {src} alt="Placeholder" />
+          <img {src} alt="{alt}" />
         </figure>
       </div>
       <div class="media-content">
