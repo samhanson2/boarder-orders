@@ -1,6 +1,8 @@
 <script>
   import { stores } from "@sapper/app";
   import { goto } from "@sapper/app";
+
+  // creates
   const { session } = stores();
   session.cart = [];
 
@@ -12,11 +14,13 @@
 </script>
 
 <style>
+  /* styles title */
   .title {
     font-size: 40px;
     padding: 10px;
     background-color: rgba(255, 255, 255, 0.5);
   }
+  /* colours flat buttons */
   .orange {
     color: white;
     background-color: rgba(255, 140, 0, 0.746);
@@ -28,6 +32,7 @@
   .yellow {
     color: white;
   }
+  /* styles buttons */
   .button {
     display: block;
     font-size: 38px;

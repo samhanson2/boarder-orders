@@ -7,7 +7,7 @@
   let title = "Cart";
   let link = "./stylefood";
 
-  /* crating array if session.cart is undefined */
+  // creates if not done already
   if (session.cart === undefined) {
     session.cart = [];
   }
@@ -58,7 +58,7 @@
   </tr>
   <tr>
     <td>
-      <!-- loop for each item in session.cart prints each item as card -->
+      <!-- each session.cart print -->
       {#each session.cart as cartItem, index}
         <div class="card">
           <div class="card-content">
@@ -71,6 +71,7 @@
                 <p class="title">${cartItem.num}</p>
               </div>
               <div class="media-right">
+                <!-- remove button -->
                 <button
                   class="button"
                   on:click={() => {
@@ -83,9 +84,11 @@
           </div>
         </div>
       {/each}
+      <!-- button to save order -->
       <button class="button" on:click={saveDataToLocal}>
         Remember my order
       </button>
+      <!-- button to get order -->
       <button class="button" on:click={getDataFromLocal}>Get last order</button>
     </td>
   </tr>

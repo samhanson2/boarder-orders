@@ -9,6 +9,7 @@
   import Header from "./_components/Header.svelte";
   let title = "Food Order";
 
+  // creates if not done already
   if (session.cart === undefined) {
     session.cart = [];
   }
@@ -16,6 +17,7 @@
 
 <Header {title} bind:items={cartItems} />
 
+<!-- Each foodItem print -->
 {#each foodItems as item}
   <div>
     <Fooditem bind:items={cartItems} {...item} />
