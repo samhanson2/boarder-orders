@@ -9,7 +9,7 @@
   export let items = 0;
   export let alt = "placeholder";
 
-  /* addeds foods to an array */
+  /* adds items to an array */
   function addFood() {
     session.cart = [...session.cart, { name: name, desc: desc, num: num }];
     items += 1;
@@ -17,6 +17,7 @@
 </script>
 
 <style>
+/* style bulma card */
   .card {
     margin-bottom: 10px;
   }
@@ -32,7 +33,7 @@
     color: black;
   }
 </style>
-
+<!-- bulma card -->
 <div class="card">
   <div class="card-content">
     <div class="media">
@@ -46,15 +47,8 @@
         <p class="subtitle">{desc}</p>
       </div>
       <div class="media-right">
-        <!-- <label for="quantity">Qty: </label>
-<input min="1" type="number" id="quantity" name="quantity" value="1" /><style>
-  #quantity {
-    padding: 5px;
-    width: 35px;
-    border: 1px solid #555;
-  }
-</style> -->
         <p class="subtitle">${num}</p>
+        <!-- add to cart button -->
         <button class="button" on:click={addFood}>Add to cart</button>
       </div>
     </div>

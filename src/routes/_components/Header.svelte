@@ -7,6 +7,7 @@
 </script>
 
 <style>
+/* style Bulma card */
   .card {
     margin-bottom: 10px;
     background-color: rgba(255, 255, 255, 0.5);
