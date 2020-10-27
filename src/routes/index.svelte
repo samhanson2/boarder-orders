@@ -2,7 +2,7 @@
   import { stores } from "@sapper/app";
   import { goto } from "@sapper/app";
 
-  // creates
+  // creates session.cart
   const { session } = stores();
   session.cart = [];
 

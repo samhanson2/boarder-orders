@@ -17,7 +17,7 @@
 </script>
 
 <style>
-/* style bulma card */
+  /* style bulma card */
   .card {
     margin-bottom: 10px;
   }
@@ -33,13 +33,14 @@
     color: black;
   }
 </style>
+
 <!-- bulma card -->
 <div class="card">
   <div class="card-content">
     <div class="media">
       <div class="media-left">
         <figure class="image is-96x96">
-          <img {src} alt="{alt}" />
+          <img {src} {alt} />
         </figure>
       </div>
       <div class="media-content">

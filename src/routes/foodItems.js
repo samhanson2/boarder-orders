@@ -1,5 +1,5 @@
 import { fix_position } from "svelte/internal"
-// items saved
+// food items saved
 const foodItems = [
 	{ name: "Mandarin", desc: "5 Mandarin", src: "./Mandarin.jpg", alt: "Mandarin", num: 2 },
 	{ name: "Orange", desc: "5 Oranges", src: "./Orange.jpg", alt: "Orange", num: 2 },
@@ -55,7 +55,7 @@ const foodItems = [
 	{ name: "Dishwashing Liquid", desc: "", num: 4 },
 	{ name: "Dishwashing Powder", desc: "", num: 7 },
 	{ name: "Dish Cloths", desc: "", num: 1 },
-	{ name: "Glad Wrao", desc: "", num: 3 },
+	{ name: "Glad Wrap", desc: "", num: 3 },
 	{ name: "Tin Foil", desc: "", num: 3 },
 	{ name: "White Bread", desc: "", num: 2 },
 	{ name: "Brown Bread", desc: "", num: 3 },

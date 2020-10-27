@@ -19,17 +19,20 @@
       ...session.cart.slice(index + 1)
     ];
   }
-  /* Storing items */
+  /* Storing each food item to data base */
   function saveDataToLocal() {
-    let order = {
-      cart: session.cart
-    };
-    db.collection("orders")
-      .doc(session.flat)
-      .set(order);
+    if (session.cart.length === 0) {
+      alert(`There is no food in your cart to save`);
+    } else {
+      let order = {
+        cart: session.cart
+      };
+      db.collection("orders")
+        .doc(session.flat)
+        .set(order);
+    }
   }
-
-  /* Get items from storing */
+  /* Getting food items from data base*/
   async function getDataFromLocal() {
     let orderDoc = await db
       .collection("orders")
@@ -58,7 +61,7 @@
   </tr>
   <tr>
     <td>
-      <!-- each session.cart print -->
+      <!-- each session.cart printing on checkout page -->
       {#each session.cart as cartItem, index}
         <div class="card">
           <div class="card-content">
