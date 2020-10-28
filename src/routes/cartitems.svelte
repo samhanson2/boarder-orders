@@ -1,6 +1,7 @@
 <script>
   import { stores } from "@sapper/app";
   const { session } = stores();
+  import { goto } from "@sapper/app";
 
   import Header from "./_components/Header.svelte";
   import Fooditem from "./_components/Fooditem.svelte";
@@ -30,7 +31,7 @@
       db.collection("orders")
         .doc(session.flat)
         .set(order);
-        alert(`Items saved`);
+      alert(`Items saved`);
     }
   }
   /* Getting food items from data base*/

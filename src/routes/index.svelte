@@ -5,6 +5,7 @@
   // creates session.cart
   const { session } = stores();
   session.cart = [];
+  
 
   let button = [
     {
@@ -37,6 +38,7 @@
   function nameAndGo(flat) {
     session.flat = flat;
     goto("./stylefood");
+    session.cart.flat = 1;
   }
 </script>
 
