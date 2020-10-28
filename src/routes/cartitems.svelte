@@ -12,7 +12,7 @@
   if (session.cart === undefined) {
     session.cart = [];
   }
-  session.cart.sort((a, b) => (a.name > b.name ? 1 : -1));
+
   /* removing items */
   function removeItem(index) {
     session.cart = [
