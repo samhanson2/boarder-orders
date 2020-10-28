@@ -7,8 +7,8 @@
   import Fooditem from "./_components/Fooditem.svelte";
   import foodItems from "./foodItems";
   import Header from "./_components/Header.svelte";
-  let title = "Food Order";
 
+  let title = "Food Order";
   // creates if not done already
   if (session.cart === undefined) {
     session.cart = [];

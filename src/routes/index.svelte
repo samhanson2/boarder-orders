@@ -5,7 +5,6 @@
   // creates session.cart
   const { session } = stores();
   session.cart = [];
-
   // function for buttons to go to next page
   function nameAndGo(flat) {
     session.flat = flat;

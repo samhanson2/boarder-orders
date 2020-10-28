@@ -63,4 +63,5 @@ const foodItems = [
 	{ name: "Blue Milk", desc: "", num: 5 },
 	{ name: "Baked Beans", desc: "", num: 1 },
 ]
+foodItems.sort((a, b) => (a.name > b.name) ? 1 : -1)
 export default foodItems
